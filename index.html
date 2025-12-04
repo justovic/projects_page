@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Progetti universitari</title>
 
-    <!-- Bootstrap 5 (solo CSS, niente JS obbligatorio) -->
+    <!-- Bootstrap 5 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
 
-    <!-- Font Awesome per icona download (opzionale) -->
+    <!-- Font Awesome (icona download, opzionale) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -22,15 +22,33 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Font + stile minimale -->
+    <!-- Font + dark mode -->
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+      :root {
+        --bg-color: #0b0c10;
+        --bg-card: #15171f;
+        --text-main: #f5f5f5;
+        --text-muted: #a0a4b8;
+        --accent: #3d7cff;
+        --accent-hover: #2960d1;
+      }
 
       body {
         font-family: 'Montserrat', sans-serif;
         font-size: 18px;
         font-weight: 300;
-        background-color: #f8f9fa;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      a:hover {
+        color: var(--accent-hover);
       }
 
       h1 {
@@ -38,31 +56,61 @@
         margin-bottom: 0.5rem;
       }
 
+      h2 {
+        font-weight: 600;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
       .lead {
         font-size: 1.05rem;
+        color: var(--text-muted);
+      }
+
+      .section-description {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
       }
 
       .project-card {
-        background: #ffffff;
-        border-radius: 0.5rem;
+        background: var(--bg-card);
+        border-radius: 0.75rem;
         padding: 1.25rem 1.5rem;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.35);
         margin-bottom: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.03);
       }
 
       .project-title {
         font-weight: 600;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.4rem;
       }
 
-      .project-meta {
+      .project-card p {
+        margin-bottom: 0.75rem;
+        font-size: 0.98rem;
+      }
+
+      .btn-download {
+        background-color: var(--accent);
+        border-color: var(--accent);
         font-size: 0.9rem;
-        color: #6c757d;
-        margin-bottom: 0.5rem;
+      }
+
+      .btn-download:hover {
+        background-color: var(--accent-hover);
+        border-color: var(--accent-hover);
       }
 
       .btn-download i {
         margin-right: 0.4rem;
+      }
+
+      .divider {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
       }
     </style>
   </head>
@@ -73,70 +121,102 @@
       <header class="mb-4">
         <h1>Progetti universitari</h1>
         <p class="lead">
-          In questa pagina ho raccolto alcuni progetti svolti durante il mio percorso universitario.
-          Per ogni progetto trovi una breve descrizione e il link per scaricare il materiale.
+          In questa pagina ho raccolto alcuni progetti svolti durante il mio percorso
+          universitario. Ogni progetto ha una breve descrizione e un link per scaricare
+          il materiale.
         </p>
       </header>
 
-      <!-- Elenco progetti -->
-      <section aria-label="Elenco progetti universitari">
-        <!-- PROGETTO 1 -->
-        <div class="project-card">
-          <div class="project-title">Titolo progetto 1</div>
-          <div class="project-meta">Anno accademico 2022/2023 · Corso di Sistemi Operativi</div>
-          <p>
-            Breve descrizione del progetto: cosa fa, con quali tecnologie è stato sviluppato,
-            e a cosa serve. Puoi scrivere anche 2–3 frasi se vuoi entrare un po' nel dettaglio.
-          </p>
-          <a
-            href="files/progetto1.pdf"
-            class="btn btn-primary btn-sm btn-download"
-            target="_blank"
-          >
-            <i class="fas fa-download"></i> Scarica PDF
-          </a>
-          <!-- oppure, se hai un repo GitHub del progetto:
-          <a href="https://github.com/tuoutente/nome-repo" class="btn btn-outline-secondary btn-sm" target="_blank">
-            <i class="fab fa-github"></i> Vedi su GitHub
-          </a>
-          -->
-        </div>
+      <!-- SEZIONE MAGISTRALE -->
+      <section aria-label="Progetti di magistrale">
+        <h2>Progetti di magistrale</h2>
+        <p class="section-description">
+          Selezione di progetti sviluppati durante la laurea magistrale.
+        </p>
 
-        <!-- PROGETTO 2 -->
+        <!-- PROGETTO MAGISTRALE 1 -->
         <div class="project-card">
-          <div class="project-title">Titolo progetto 2</div>
-          <div class="project-meta">Anno accademico 2021/2022 · Corso di Basi di Dati</div>
+          <div class="project-title">Titolo progetto magistrale 1</div>
           <p>
-            Breve descrizione del secondo progetto. Ad esempio: progettazione e implementazione
-            di un database relazionale per la gestione di &lt;qualcosa&gt;, con schema ER, SQL, ecc.
+            Breve descrizione del progetto (magistrale 1): cosa fa, quali problemi affronta,
+            quali tecnologie hai usato, ecc.
           </p>
           <a
-            href="files/progetto2.pdf"
-            class="btn btn-primary btn-sm btn-download"
+            href="files/magistrale_progetto1.pdf"
+            class="btn btn-download btn-sm"
             target="_blank"
           >
             <i class="fas fa-download"></i> Scarica PDF
           </a>
         </div>
 
-        <!-- PROGETTO 3 -->
+        <!-- PROGETTO MAGISTRALE 2 -->
         <div class="project-card">
-          <div class="project-title">Titolo progetto 3</div>
-          <div class="project-meta">Anno accademico 2020/2021 · Corso di Reti</div>
+          <div class="project-title">Titolo progetto magistrale 2</div>
           <p>
-            Ancora una breve descrizione. Sentiti libero di personalizzare completamente testi,
-            anni accademici e corsi.
+            Breve descrizione del progetto (magistrale 2). Puoi indicare, ad esempio,
+            se è un progetto di gruppo, se c'è anche codice sorgente in un altro repo, ecc.
           </p>
           <a
-            href="files/progetto3.pdf"
-            class="btn btn-primary btn-sm btn-download"
+            href="files/magistrale_progetto2.pdf"
+            class="btn btn-download btn-sm"
             target="_blank"
           >
             <i class="fas fa-download"></i> Scarica PDF
           </a>
         </div>
 
-        <!-- Aggiungi qui altri progetti duplicando il blocco .project-card -->
+        <!-- Aggiungi altri progetti di magistrale duplicando .project-card -->
+      </section>
+
+      <!-- DIVISORE VISIVO -->
+      <div class="divider"></div>
+
+      <!-- SEZIONE TRIENNALE -->
+      <section aria-label="Progetti di triennale">
+        <h2>Progetti di triennale</h2>
+        <p class="section-description">
+          Alcuni progetti realizzati durante la laurea triennale.
+        </p>
+
+        <!-- PROGETTO TRIENNALE 1 -->
+        <div class="project-card">
+          <div class="project-title">Titolo progetto triennale 1</div>
+          <p>
+            Breve descrizione del progetto (triennale 1): ad esempio una piccola app,
+            un progetto di esame, un lavoro di laboratorio, ecc.
+          </p>
+          <a
+            href="files/triennale_progetto1.pdf"
+            class="btn btn-download btn-sm"
+            target="_blank"
+          >
+            <i class="fas fa-download"></i> Scarica PDF
+          </a>
+        </div>
+
+        <!-- PROGETTO TRIENNALE 2 -->
+        <div class="project-card">
+          <div class="project-title">Titolo progetto triennale 2</div>
+          <p>
+            Breve descrizione del progetto (triennale 2). Anche qui puoi mettere 2–3 frasi
+            per spiegare cosa hai fatto.
+          </p>
+          <a
+            href="files/triennale_progetto2.pdf"
+            class="btn btn-download btn-sm"
+            target="_blank"
+          >
+            <i class="fas fa-download"></i> Scarica PDF
+          </a>
+        </div>
+
+        <!-- Aggiungi altri progetti di triennale duplicando .project-card -->
+      </section>
+    </div>
+  </body>
+</html>
+
       </section>
     </div>
   </body>
